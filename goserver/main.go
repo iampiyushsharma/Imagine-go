@@ -30,7 +30,7 @@ func main() {
  godotenv.Load()
  port := os.Getenv("PORT")
  if port == "" {
-   port = 4000
+   port = "4000"
  }
 	fmt.Println("Server is getting started...")
 	log.Fatal(http.ListenAndServe(":"+port, corsRouter))
