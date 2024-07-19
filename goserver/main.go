@@ -28,7 +28,10 @@ func main() {
 	r := router.Router()
 	corsRouter := enableCors(r)
  godotenv.Load()
- port := os.Getenv("PORT") ?? "4000"
+ port := os.Getenv("PORT")
+ if port == "" {
+   port = 4000
+ }
 	fmt.Println("Server is getting started...")
 	log.Fatal(http.ListenAndServe(":"+port, corsRouter))
 	fmt.Println("Listening at port 4000 ...")
