@@ -26,7 +26,9 @@ func main() {
 	fmt.Println("MongoDB API")
 	r := router.Router()
 	corsRouter := enableCors(r)
+ godotenv.Load()
+ port := os.Getenv('PORT') || ":4000"
 	fmt.Println("Server is getting started...")
-	log.Fatal(http.ListenAndServe(":4000", corsRouter))
+	log.Fatal(http.ListenAndServe(port, corsRouter))
 	fmt.Println("Listening at port 4000 ...")
 }
