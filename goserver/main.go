@@ -6,6 +6,7 @@ import (
 	"net/http"
  "os"
 	"server/router"
+ "github.com/joho/godotenv"
 )
 
 func enableCors(next http.Handler) http.Handler {
